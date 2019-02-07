@@ -4,6 +4,8 @@
   "description": "to do list developed by RxJS",
   "main": "index.html",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/daengdaengLee/rxjs-to-do-list/issues"
   },
-  "homepage": "https://github.com/daengdaengLee/rxjs-to-do-list#readme"
+  "homepage": "https://github.com/daengdaengLee/rxjs-to-do-list#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.11.0"
+  }
 }
