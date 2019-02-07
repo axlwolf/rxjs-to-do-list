@@ -25,6 +25,7 @@
     "parcel-bundler": "^1.11.0"
   },
   "dependencies": {
+    "lit-html": "^1.0.0",
     "rxjs": "^6.4.0"
   }
 }
