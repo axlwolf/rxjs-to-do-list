@@ -1,0 +1,22 @@
+{
+  "name": "rxjs-to-do-list",
+  "version": "1.0.0",
+  "description": "to do list developed by RxJS",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daengdaengLee/rxjs-to-do-list.git"
+  },
+  "keywords": [
+    "RxJS"
+  ],
+  "author": "daengdaenglee",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/daengdaengLee/rxjs-to-do-list/issues"
+  },
+  "homepage": "https://github.com/daengdaengLee/rxjs-to-do-list#readme"
+}
