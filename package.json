@@ -23,5 +23,8 @@
   "homepage": "https://github.com/daengdaengLee/rxjs-to-do-list#readme",
   "devDependencies": {
     "parcel-bundler": "^1.11.0"
+  },
+  "dependencies": {
+    "rxjs": "^6.4.0"
   }
 }
