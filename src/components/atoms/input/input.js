@@ -17,19 +17,18 @@ class Input extends HTMLElement {
 <input type="text" />
     `.trim();
 
-    this.els = {};
-    this.els.style = this.shadowRoot.querySelector("style");
-    this.els.input = this.shadowRoot.querySelector("input");
+    this.$style = this.shadowRoot.querySelector("style");
+    this.$input = this.shadowRoot.querySelector("input");
   }
 
   attributeChangedCallback(attrName, oldVal, newVal) {
     if (attrName === "width" || attrName === "height") {
-      this.els.style.innerHTML = this.createStyleInnerHTML();
+      this.$style.innerHTML = this.createStyleInnerHTML();
     }
   }
 
   createKeyup$() {
-    return fromEvent(this.els.input, "keyup").pipe(
+    return fromEvent(this.$input, "keyup").pipe(
       map(event => ({ value: event.target.value, keyCode: event.keyCode })),
       share()
     );
@@ -40,6 +39,10 @@ class Input extends HTMLElement {
 input {
   width: ${this.width};
   height: ${this.height};
+
+  box-sizing: border-box;
+
+  padding: 0.24rem;
 }
     `.trim();
   }
