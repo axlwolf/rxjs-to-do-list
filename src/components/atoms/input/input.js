@@ -1,5 +1,5 @@
 import { fromEvent } from "rxjs";
-import { map, share } from "rxjs/operators";
+import { map, share, filter } from "rxjs/operators";
 
 class Input extends HTMLElement {
   static get observedAttributes() {
@@ -8,6 +8,8 @@ class Input extends HTMLElement {
 
   constructor() {
     super();
+
+    this.resetInput = this.resetInput.bind(this);
 
     this.attachShadow({ mode: "open" });
     this.shadowRoot.innerHTML = `
@@ -29,7 +31,9 @@ class Input extends HTMLElement {
 
   createKeyup$() {
     return fromEvent(this.$input, "keyup").pipe(
-      map(event => ({ value: event.target.value, keyCode: event.keyCode })),
+      filter(event => event.keyCode === 13),
+      filter(event => event.target.value.length),
+      map(event => ({ id: Date.now(), value: event.target.value })),
       share()
     );
   }
@@ -45,6 +49,10 @@ input {
   padding: 0.24rem;
 }
     `.trim();
+  }
+
+  resetInput() {
+    this.$input.value = "";
   }
 
   get width() {
